@@ -63,6 +63,14 @@ async function syncQuotes() {
     console.error('Error syncing quotes:', error);
   }
 }
+console.log("Quotes synced with server!");
+    // Or update the UI:
+    const status = document.getElementById('sync-status');
+    if (status) status.textContent = "Quotes synced with server!";
+  } catch (error) {
+    console.error('Error syncing quotes:', error);
+  }
+}
 
 // --- UI Rendering ---
 function renderQuotes(quotes) {
@@ -98,3 +106,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   
+
