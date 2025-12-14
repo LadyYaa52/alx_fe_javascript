@@ -73,6 +73,23 @@
       // Update categories and refresh display
       populateCategories();
       filterQuotes();
+       function showRandomQuote() {
+  if (quotes.length === 0) {
+    document.getElementById("quoteDisplay").textContent = "No quotes available.";
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+
+  document.getElementById("quoteDisplay")..textContent =
+    `"${randomQuote.text}" — ${randomQuote.category}`;
+}
+
+
+
+
+ 
 
       // Clear inputs
       document.getElementById("quoteInput").value = "";
@@ -85,7 +102,5 @@
       filterQuotes();
     };
 
-
-
-
   
+
