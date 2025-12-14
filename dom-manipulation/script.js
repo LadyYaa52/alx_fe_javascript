@@ -16,14 +16,14 @@ function showRandomQuote(category = null) {
     : quotes;
 
   if (filteredQuotes.length === 0) {
-    quoteDisplay.textContent = "No quotes available for this category.";
+    quoteDisplay.innerHTML = "No quotes available for this category.";
     return;
   }
 
   const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
   const randomQuote = filteredQuotes[randomIndex];
 
-  quoteDisplay.textContent = `"${randomQuote.text}" — (${randomQuote.category})`;
+  quoteDisplay.innerHTML = `"${randomQuote.text}" — (${randomQuote.category})`;
 }
 
 // Function to create the Add Quote form dynamically
@@ -69,3 +69,4 @@ newQuoteBtn.addEventListener("click", () => showRandomQuote());
 
 // Initialize the form on page load
 createAddQuoteForm();
+
